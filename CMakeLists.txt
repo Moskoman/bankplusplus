@@ -6,5 +6,6 @@ add_definitions(-std=c++11)
 add_executable(Bank
     src/main.cpp
     src/Account.h
+    src/Account.cpp
     )
 target_link_libraries(Bank)

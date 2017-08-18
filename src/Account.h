@@ -4,42 +4,20 @@ using namespace std;
 
 class Account
 {
+//constructor
 public:
-	Account(string name, double initialBalance = 0){
-		setOwner(name);
-		setInicialBalance(initialBalance);
-	}
+	Account(string name, double initialBalance);
 
-	void setOwner (string name){
-		owner = name;
-	}
+	//Sets and Gets
+	void setOwner (string name);
+	string getOwner ();
+	void setInicialBalance (double value);
+	double getBalance ();
 
-	string getOwner (){
-		return owner;
-	}
+	//Operations
+	void withdraw (double amount);
+	void deposit (double amount);
 
-	void setInicialBalance (double value){
-		if (value >= 0) {
-			balance = value;
-		}
-		else balance = 0;
-	}
-
-	double getBalance (){
-		return balance;
-	}
-
-	void withdraw (double amount){
-		if (amount > 0 && amount <= balance){
-			balance -= amount;
-		}
-	}
-
-	void deposit (double amount){
-		if (amount > 0){
-			balance += amount;
-		}
-	}
 private:
 	string owner;
 	double balance;
